@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清华右边栏</title>
+    <style>
+        .mod {
+            width: 290px;
+            margin-bottom: 20px;
+        }
+        .mod h2 {
+            padding-bottom: 20px;
+            border-bottom: 2px solid #d6d6d6;
+            font-size: 18px;
+            line-height: 36px;
+            font-weight: normal;
+        }
+        .mod h2 i {
+            background: #59228a;
+            color: #fff;
+            height: 36px;
+            width: 36px;
+            display: inline-block;
+            text-align: center;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        .wonderful h2 {
+            margin-bottom: 20px;
+            color: #471b6f;
+        }
+        .wonderful .more {
+            float: right;
+            font-size: 12px;
+            color: #999;
+        }
+        .wonderful .mVideo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .wonderful .mVideo li {
+            width: 135px;
+            height: 150px;
+            position: relative;
+        }
+        .wonderful .mVideo b {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            z-index: 100;
+            background: url("https://news.tsinghua.edu.cn/dfiles/20186/publish/thunews/images/play_09.jpg") no-repeat center center;
+            left: 10%;
+            bottom: 50%;
+        }
+        .wonderful .mVideo img {
+            width: 100%;
+        }
+        .wonderful .mVideo .title {
+            color: #555;
+            font-size: 12px;
+            overflow: hidden;
+            height: 36px;
+            line-height: 18px;
+            text-overflow: ellipsis;
+            margin: 10px 0 20px 0;
+        }
+        .wonderful .mVideo .title:hover {
+            color: #ff7800;
+        }
+        .hotSpot h2 i {
+            background: #bd2980;
+        }
+        .hotSpot h2 span {
+            color: #bd2980;
+        }
+        .hotSpot .hotList {
+            color: #999;
+            font-size: 12px;
+        }
+        .hotSpot .hotList li {
+            border-bottom: 1px dotted #bababa;
+            padding: 20px 0;
+        }
+        .hotSpot .hotList .thumb {
+            padding-bottom: 8px;
+        }
+        .hotSpot .hotList i {
+            font-size: 14px;
+            margin: 0 5px 0 15px;
+        }
+        .hotSpot .hotList i:first-of-type {
+            color: #ff7800;
+            margin-left: 0;
+            font-weight: bold;
+        }
+        .hotSpot .hotList .title a {
+            color: #555;
+            line-height: 20px;
+        }
+        .hotSpot .hotList .title a:hover {
+            color: #ff7800;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="wonderful mod">
+        <h2>
+            <i class="iconfont icon-bofang"></i>
+            <span>精彩视频</span>
+            <a class="more" href="javascript:;">更多 ›</a>
+        </h2>
+        <ul class="mVideo"></ul>
+    </section>
+    <section class="hotSpot mod">
+        <h2>
+            <i class="iconfont icon-shangsheng"></i>
+            <span>近期热点</span>
+        </h2>
+        <ul class="hotList"></ul>
+    </section>
+</body>
+
+</html>
+<script>
+    (function () {
+        let url1 = "data/mVideo.json"
+        let url2 = "data/recNews.json"
+        let getData = (url1, url2) => {
+            $.ajax({
+                url: url1,
+                success: (res) => {
+                    renderVideo(res);
+                }
+            })
+            $.ajax({
+                url: url2,
+                success: (res) => {
+                    renderHot(res);
+                }
+            })
+        }
+        getData(url1, url2);
+        // 渲染mVideo数据
+        function renderVideo(data) {
+            let str = "";
+            data.forEach(el => {
+                str +=
+                    `<li><a href="javascript:;"><b></b><img src="${el.src}"alt=""><p class="title">${el.title}</p></a></li>`
+            });
+            $(".mVideo").html(str);
+        }
+        // 渲染hotList数据
+        function renderHot(data) {
+            let str = "";
+            data.forEach(el => {
+                str +=
+                    `<li><div class="thumb"><i class="iconfont icon-shizhongclock77"></i><span>${el.time}</span><i class="iconfont icon-yanjing"></i><span>${el.view}</span></div><p class="title"><a href="javascript:;">${el.title}</a></p></li>`
+            });
+            $(".hotList").html(str);
+        }
+    })()
+</script>

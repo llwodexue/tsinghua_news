@@ -1,0 +1,126 @@
+/* header */
+.header {
+    background: #542185
+        url("https://news.tsinghua.edu.cn/dfiles/20186/publish/thunews/images/bg_01.jpg")
+        no-repeat center center;
+    padding-top: 25px;
+}
+/* logo 搜索框 */
+.header .mainWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo {
+    margin-left: 10px;
+    padding-bottom: 20px;
+}
+.header input {
+    height: 36px;
+    line-height: 36px;
+}
+.header input[type="text"] {
+    width: 290px;
+    padding: 0 10px;
+    font-size: calc(var(--fontSize) - 2px);
+}
+.header input[type="image"] {
+    background: #f4930a;
+    width: 50px;
+}
+.header .social {
+    display: flex;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+}
+.header .socialNet {
+    width: 26px;
+    background: #ededed;
+    margin-right: 5px;
+}
+.header .socialNet .iconfont {
+    display: block;
+    color: #722db0;
+    font-size: calc(var(--fontSize) + 6px);
+}
+.header .socialNet .iconfont:hover {
+    background: #f4930a;
+    color: #fff;
+}
+.header .en a {
+    font-size: calc(var(--fontSize) - 2px);
+    display: block;
+    background: #f4930a;
+    color: #4c2270;
+    padding: 0 15px;
+}
+.header .en a:hover {
+    background: #fff;
+}
+.header .home a {
+    font-size: calc(var(--fontSize) - 2px);
+    margin-left: 20px;
+    color: #fff;
+}
+.header .home a:hover {
+    color: #f4930a;
+}
+/* 导航栏 */
+.header .navWrap {
+    border-top: 1px solid #9450df;
+}
+.header .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    line-height: 60px;
+    height: 60px;
+    position: relative;
+}
+.header .nav > li > a {
+    display: block;
+    color: #fff;
+    padding: 0 10px;
+    font-size: calc(var(--fontSize) + 1px);
+}
+.header .nav > li:hover > a {
+    color: #f4930a;
+}
+.header .nav > li a.current {
+    border-bottom: 3px solid #f4930a;
+    height: 57px;
+}
+.header .nav li:hover ul {
+    display: block;
+}
+.header .nav ul > li {
+    background: #fff;
+}
+.header .nav ul > li:hover a {
+    background: #f1eee7;
+}
+.header .nav ul {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    width: 150px;
+    padding: 5px 0;
+    line-height: 40px;
+    margin-left: -45px;
+    box-shadow: 0px 0px 5px #666;
+}
+.header .nav ul i {
+    position: absolute;
+    border: 14px solid;
+    border-color: transparent transparent #fff transparent;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+.header .nav ul a {
+    font-size: var(--fontSize);
+    display: block;
+    text-align: center;
+    color: #2f124a;
+}

@@ -1,0 +1,44 @@
+{
+  "id": "2249403",
+  "name": "web_shop",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "815451",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "6756291",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "16576744",
+      "name": "rss",
+      "font_class": "rss",
+      "unicode": "e873",
+      "unicode_decimal": 59507
+    },
+    {
+      "icon_id": "681191",
+      "name": "排序箭头上",
+      "font_class": "paixujiantoushang",
+      "unicode": "e74c",
+      "unicode_decimal": 59212
+    },
+    {
+      "icon_id": "15872072",
+      "name": "排序箭头下",
+      "font_class": "paixujiantouxia",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}

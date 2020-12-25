@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清华header</title>
+    <style>
+        /* header */
+        .header {
+            width: 100%;
+            background: #542185 url("https://news.tsinghua.edu.cn/dfiles/20186/publish/thunews/images/bg_01.jpg") no-repeat center center;
+            padding-top: 25px;
+        }
+
+        /* logo 搜索框 */
+        .header .mainWrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            margin-left: 10px;
+            padding-bottom: 20px;
+        }
+
+        .header input {
+            height: 36px;
+            line-height: 36px;
+        }
+
+        .header input[type="text"] {
+            width: 290px;
+            padding: 0 10px;
+            font-size: calc(var(--fontSize) - 2px);
+        }
+
+        .header input[type="image"] {
+            background: #f4930a;
+            width: 50px;
+        }
+
+        .header .social {
+            display: flex;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+        }
+
+        .header .socialNet {
+            width: 26px;
+            background: #ededed;
+            margin-right: 5px;
+        }
+
+        .header .socialNet .iconfont {
+            display: block;
+            color: #722db0;
+            font-size: calc(var(--fontSize) + 6px);
+        }
+
+        .header .socialNet .iconfont:hover {
+            background: #f4930a;
+            color: #fff;
+        }
+
+        .header .en a {
+            font-size: calc(var(--fontSize) - 2px);
+            display: block;
+            background: #f4930a;
+            color: #4c2270;
+            padding: 0 15px;
+        }
+
+        .header .en a:hover {
+            background: #fff;
+        }
+
+        .header .home a {
+            font-size: calc(var(--fontSize) - 2px);
+            margin-left: 20px;
+            color: #fff;
+        }
+
+        .header .home a:hover {
+            color: #f4930a;
+        }
+
+        /* 导航栏 */
+        .header .navWrap {
+            border-top: 1px solid #9450df;
+        }
+
+        .header .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 12px;
+            line-height: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        .header .nav>li>a {
+            display: block;
+            color: #fff;
+            padding: 0 10px;
+            font-size: calc(var(--fontSize) + 1px);
+        }
+
+        .header .nav>li:hover>a {
+            color: #f4930a;
+        }
+
+        .header .nav>li a.current {
+            border-bottom: 3px solid #f4930a;
+            height: 57px;
+        }
+
+        .header .nav li:hover ul {
+            display: block;
+        }
+
+        .header .nav ul>li {
+            background: #fff;
+        }
+
+        .header .nav ul>li:hover a {
+            background: #F1EEE7;
+        }
+
+        .header .nav ul {
+            display: none;
+            position: absolute;
+            z-index: 100;
+            width: 150px;
+            padding: 5px 0;
+            line-height: 40px;
+            margin-left: -45px;
+            box-shadow: 0px 0px 5px #666;
+        }
+
+        .header .nav ul i {
+            position: absolute;
+            border: 14px solid;
+            border-color: transparent transparent #fff transparent;
+            left: 50%;
+            transform: translate(-50%, -100%);
+        }
+
+        .header .nav ul a {
+            font-size: var(--fontSize);
+            display: block;
+            text-align: center;
+            color: #2f124a;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <!-- logo 搜索框 -->
+        <section class="mainWrap md">
+            <a href="javascript:;" class="logo">
+                <img src="https://news.tsinghua.edu.cn/dfiles/20186/publish/thunews/images/logo.jpg" alt="logo">
+            </a>
+            <div class="search clearfix">
+                <input type="text" class="left">
+                <input type="image" src="https://news.tsinghua.edu.cn/images/ss.jpg" class="left">
+            </div>
+            <ul class="social">
+                <li class="socialNet">
+                    <a href="javascript:;">
+                        <i class="iconfont icon-weibo"></i>
+                    </a>
+                </li>
+                <li class="socialNet">
+                    <a href="javascript:;">
+                        <i class="iconfont icon-weixin"></i>
+                    </a>
+                </li>
+                <li class="socialNet">
+                    <a href="javascript:;">
+                        <i class="iconfont icon-rss"></i>
+                    </a>
+                </li>
+                <li class="en">
+                    <a href="javascript:;">ENGLISH</a>
+                </li>
+                <li class="home">
+                    <a href="javascript:;">清华主页</a>
+                </li>
+            </ul>
+        </section>
+        <!-- 导航栏 -->
+        <nav class="navWrap">
+            <ul class="nav md">
+                <li><a href="javascript:;">首页</a></li>
+                <li><a href="javascript:;">头条新闻</a>
+                </li>
+                <li><a href="javascript:;">综合新闻</a>
+                </li>
+                <li><a href="javascript:;">专题新闻</a>
+                </li>
+                <li><a href="javascript:;">要闻聚焦</a>
+                    <ul>
+                        <i><em></em></i>
+                        <li><a href="javascript:;">时讯快递</a></li>
+                        <li><a href="javascript:;">学术科研</a></li>
+                        <li><a href="javascript:;">教育教学</a></li>
+                        <li><a href="javascript:;">招生就业</a></li>
+                        <li><a href="javascript:;">交流合作</a></li>
+                        <li><a href="javascript:;">观点报道</a></li>
+                        <li><a href="javascript:;">社会服务</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;">媒体清华</a>
+                </li>
+                <li><a href="javascript:;" class="current">图说清华</a>
+                </li>
+                <li><a href="javascript:;">视频空间</a>
+                </li>
+                <li><a href="javascript:;">清华人物</a>
+                </li>
+                <li><a href="javascript:;">校园写意</a>
+                    <ul>
+                        <i><em></em></i>
+                        <li><a href="javascript:;">广角透视</a></li>
+                        <li><a href="javascript:;">校园生活</a></li>
+                        <li><a href="javascript:;">微观清华</a></li>
+                        <li><a href="javascript:;">清华史苑</a></li>
+                        <li><a href="javascript:;">高教视点</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;">新闻排行</a>
+                </li>
+                <li><a href="javascript:;">新闻合集</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+</html>
+<script>
+    (function () {
+        let nav = document.querySelector(".header .nav");
+        let links = document.querySelectorAll(".header .nav>li>a");
+        for (let i = 0; i < links.length; i++) {
+            links[i].onclick = function () {
+                let curAll = nav.querySelectorAll(".current");
+                for (let j = 0; j < curAll.length; j++) {
+                    curAll[j].classList.remove("current");
+                }
+                this.classList.add("current");
+            }
+        }
+    })()
+</script>
