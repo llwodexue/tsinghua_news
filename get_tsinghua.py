@@ -4,12 +4,10 @@ from bs4 import BeautifulSoup
 import json
 import random
 
-
-url = 'https://news.tsinghua.edu.cn/tsqh/19.htm'
-# url = "https://news.tsinghua.edu.cn/tsqh.htm"
+url = "https://news.tsinghua.edu.cn/tsqh.htm"
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'}
-path = "D:/picwhitenewslist.json"
+path = "D:/picNews.json"
 
 
 def get_page():
@@ -46,10 +44,7 @@ def parse_html(html):
         time = li.select("i.thunews-clock-o")
         if time:
             time = time[0].next_element
-        # 获取阅览人数
-        # view = li.select("font>span")
-        # if view:
-        #     time = view[0].string
+        # 随机生成阅览人数
         view = random.randint(800,8000)
         all_obj = {
             "img": img,
@@ -63,5 +58,6 @@ def parse_html(html):
 
 html = get_page()
 lists = parse_html(html)
+# 生成json文件
 with open(path, 'w', encoding='utf-8') as writer:
     json.dump(lists, writer, ensure_ascii=False, indent=2)
